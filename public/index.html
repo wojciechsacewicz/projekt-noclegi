@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noclegi - Wyszukiwarka</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Rezerwacja Noclegów</h1>
+        <nav>
+            <a href="index.html">Wyszukiwarka</a>
+            <a href="booking.html">Rezerwacja</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>Znajdź idealne miejsce</h2>
+            <form id="search-form">
+                <div class="form-group">
+                    <label for="location">Lokalizacja:</label>
+                    <input type="text" id="location" name="location" placeholder="Miasto, region...">
+                </div>
+                <div class="form-group">
+                    <label for="checkin">Data przyjazdu:</label>
+                    <input type="date" id="checkin" name="checkin">
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Data wyjazdu:</label>
+                    <input type="date" id="checkout" name="checkout">
+                </div>
+                <div class="form-group">
+                    <label for="guests">Liczba gości:</label>
+                    <input type="number" id="guests" name="guests" min="1" value="1">
+                </div>
+                <button type="submit" class="btn-primary">Szukaj</button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <h2>Dostępne oferty</h2>
+            <div id="offers-list" class="offers-list">
+                <!-- Offers will be loaded here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projekt Noclegi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
