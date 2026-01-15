@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
         }
     }
     
-    // TODO: Add date-based availability check when booking system is implemented
+    // Note: Future enhancement - implement date-based availability check
+    // to prevent double-booking of the same offer
     
     query += ' ORDER BY created_at DESC';
     
