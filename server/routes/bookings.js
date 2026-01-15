@@ -69,6 +69,11 @@ router.post('/', (req, res) => {
     const checkin = new Date(checkinDate);
     const checkout = new Date(checkoutDate);
     
+    if (isNaN(checkin.getTime()) || isNaN(checkout.getTime())) {
+        res.status(400).json({ error: 'Invalid date format' });
+        return;
+    }
+    
     if (checkin >= checkout) {
         res.status(400).json({ error: 'Checkout date must be after checkin date' });
         return;
@@ -88,8 +93,8 @@ router.post('/', (req, res) => {
         }
         
         // Check if guests count is within capacity
-        if (guestsCount > offer.capacity) {
-            res.status(400).json({ error: `Maximum capacity is ${offer.capacity} guests` });
+        if (guestsCount <= 0 || guestsCount > offer.capacity) {
+            res.status(400).json({ error: `Guest count must be between 1 and ${offer.capacity}` });
             return;
         }
         

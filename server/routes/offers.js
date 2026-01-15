@@ -16,8 +16,11 @@ router.get('/', (req, res) => {
     }
     
     if (guests) {
-        query += ' AND capacity >= ?';
-        params.push(parseInt(guests));
+        const guestsNum = parseInt(guests);
+        if (!isNaN(guestsNum) && guestsNum > 0) {
+            query += ' AND capacity >= ?';
+            params.push(guestsNum);
+        }
     }
     
     // TODO: Add date-based availability check when booking system is implemented
