@@ -11,12 +11,11 @@ const db = require('./database');
 const offersRoutes = require('./routes/offers');
 const bookingsRoutes = require('./routes/bookings');
 
-// tworzymy aplikacje express
+// express
 const app = express();
-// bierzemy port z env albo bierzemy 3000
 const PORT = process.env.PORT || 3000;
 
-// middleware czyli funkcje ktore robia cos przed obsluga tras
+// funkcje ktore robia cos przed obsluga tras
 // cors pozwala na requesty z przegladarki
 app.use(cors());
 // json zamienia body na obiekt w req body
