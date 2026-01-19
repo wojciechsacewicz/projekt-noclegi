@@ -16,54 +16,11 @@ const db = new sqlite3.Database(DB_PATH, (err) => {
     }
 });
 
-// ta funkcja tworzy tabele i wklada przykladowe dane
-// zwracamy promise bo init jest asynchroniczny
+// ta funkcja wklada przykladowe dane do tabel
 function initialize() {
     return new Promise((resolve, reject) => {
         // serialize robi ze zapytania wykonuja sie po kolei
         db.serialize(() => {
-            // tu tworzymy tabele offers jak jej nie ma
-            db.run(`
-                CREATE TABLE IF NOT EXISTS offers (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT NOT NULL,
-                    location TEXT NOT NULL,
-                    description TEXT,
-                    capacity INTEGER NOT NULL,
-                    price REAL NOT NULL,
-                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-                )
-            `, (err) => {
-                // jak sie nie uda to od razu reject
-                if (err) {
-                    reject(err);
-                    return;
-                }
-            });
-
-            // tu tworzymy tabele bookings jak jej nie ma
-            db.run(`
-                CREATE TABLE IF NOT EXISTS bookings (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    offer_id INTEGER NOT NULL,
-                    name TEXT NOT NULL,
-                    email TEXT NOT NULL,
-                    phone TEXT NOT NULL,
-                    checkin_date DATE NOT NULL,
-                    checkout_date DATE NOT NULL,
-                    guests_count INTEGER NOT NULL,
-                    notes TEXT,
-                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (offer_id) REFERENCES offers(id)
-                )
-            `, (err) => {
-                // jak sie nie uda to od razu reject
-                if (err) {
-                    reject(err);
-                    return;
-                }
-            });
-
             // tu sprawdzamy czy offers jest puste
             db.get('SELECT COUNT(*) as count FROM offers', (err, row) => {
                 // jak jest blad to przerywamy
