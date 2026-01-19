@@ -1,16 +1,28 @@
+/* ten plik ustawia wyglad stron html */
+
+/* reset podstawowych ustawien */
 * {
+    /* zerujemy margines */
     margin: 0;
+    /* zerujemy padding */
     padding: 0;
+    /* liczymy rozmiary z borderem */
     box-sizing: border-box;
 }
 
+/* ustawienia calej strony */
 body {
+    /* fonty */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* wysokosc linii */
     line-height: 1.6;
+    /* kolor tekstu */
     color: #333;
+    /* kolor tla */
     background-color: #f4f4f4;
 }
 
+/* wyglad naglowka */
 header {
     background-color: #2c3e50;
     color: #fff;
@@ -19,14 +31,17 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* odstep pod tytulem */
 header h1 {
     margin-bottom: 0.5rem;
 }
 
+/* nawigacja pod tytulem */
 nav {
     margin-top: 1rem;
 }
 
+/* linki w nawigacji */
 nav a {
     color: #fff;
     text-decoration: none;
@@ -36,16 +51,19 @@ nav a {
     transition: background-color 0.3s;
 }
 
+/* efekt hover na linkach */
 nav a:hover {
     background-color: #34495e;
 }
 
+/* kontener glownej tresci */
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
+/* pudelko dla sekcji */
 section {
     background: #fff;
     padding: 2rem;
@@ -54,15 +72,18 @@ section {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* tytuly sekcji */
 h2 {
     margin-bottom: 1.5rem;
     color: #2c3e50;
 }
 
+/* jedna grupa pola formularza */
 .form-group {
     margin-bottom: 1.5rem;
 }
 
+/* label nad inputem */
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
@@ -70,6 +91,7 @@ h2 {
     color: #555;
 }
 
+/* inputy i textarea w formularzu */
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -80,12 +102,14 @@ h2 {
     transition: border-color 0.3s;
 }
 
+/* focus czyli jak klikniemy w pole */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: #3498db;
 }
 
+/* podstawowy przycisk */
 .btn-primary {
     background-color: #3498db;
     color: #fff;
@@ -97,16 +121,19 @@ h2 {
     transition: background-color 0.3s;
 }
 
+/* hover na przycisku */
 .btn-primary:hover {
     background-color: #2980b9;
 }
 
+/* lista ofert jako siatka */
 .offers-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
+/* jedna karta oferty */
 .offer-card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -114,21 +141,25 @@ h2 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* efekt podniesienia karty */
 .offer-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* tytul w karcie */
 .offer-card h3 {
     color: #2c3e50;
     margin-bottom: 0.5rem;
 }
 
+/* paragrafy w karcie */
 .offer-card p {
     margin-bottom: 0.5rem;
     color: #666;
 }
 
+/* cena w karcie */
 .offer-card .price {
     font-size: 1.25rem;
     font-weight: bold;
@@ -136,6 +167,7 @@ h2 {
     margin-top: 1rem;
 }
 
+/* komunikat wyniku rezerwacji */
 .result-message {
     margin-top: 1.5rem;
     padding: 1rem;
@@ -143,6 +175,7 @@ h2 {
     display: none;
 }
 
+/* wyglad sukcesu */
 .result-message.success {
     display: block;
     background-color: #d4edda;
@@ -150,6 +183,7 @@ h2 {
     color: #155724;
 }
 
+/* wyglad bledu */
 .result-message.error {
     display: block;
     background-color: #f8d7da;
@@ -157,6 +191,7 @@ h2 {
     color: #721c24;
 }
 
+/* stopka strony */
 footer {
     background-color: #2c3e50;
     color: #fff;
@@ -165,11 +200,14 @@ footer {
     margin-top: 2rem;
 }
 
+/* responsywnosc na mniejszych ekranach */
 @media (max-width: 768px) {
+    /* jedna kolumna zamiast siatki */
     .offers-list {
         grid-template-columns: 1fr;
     }
     
+    /* linki jeden pod drugim */
     nav a {
         display: block;
         margin: 0.5rem 0;

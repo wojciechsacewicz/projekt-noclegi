@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- head ma meta i podpiete style -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noclegi - Wyszukiwarka</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <!-- podpinamy css -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- naglowek strony -->
     <header>
-        <h1>Rezerwacja Noclegów</h1>
-        <nav>
-            <a href="index.html">Wyszukiwarka</a>
-            <a href="booking.html">Rezerwacja</a>
-        </nav>
+      <h1>Rezerwacja Noclegów</h1>
+      <!-- prosta nawigacja -->
+      <nav>
+        <a href="index.html">Wyszukiwarka</a>
+      </nav>
     </header>
 
+    <!-- tu jest glowna zawartosc -->
     <main>
-        <section class="search-section">
-            <h2>Znajdź idealne miejsce</h2>
-            <form id="search-form">
-                <div class="form-group">
-                    <label for="location">Lokalizacja:</label>
-                    <input type="text" id="location" name="location" placeholder="Miasto, region...">
-                </div>
-                <div class="form-group">
-                    <label for="checkin">Data przyjazdu:</label>
-                    <input type="date" id="checkin" name="checkin">
-                </div>
-                <div class="form-group">
-                    <label for="checkout">Data wyjazdu:</label>
-                    <input type="date" id="checkout" name="checkout">
-                </div>
-                <div class="form-group">
-                    <label for="guests">Liczba gości:</label>
-                    <input type="number" id="guests" name="guests" min="1" value="1">
-                </div>
-                <button type="submit" class="btn-primary">Szukaj</button>
-            </form>
-        </section>
+      <!-- sekcja z formularzem wyszukiwania -->
+      <section class="search-section">
+        <h2>Znajdź idealne miejsce</h2>
+        <!-- formularz ma id bo js go szuka -->
+        <form id="search-form">
+          <!-- grupa pola -->
+          <div class="form-group">
+            <label for="location">Lokalizacja:</label>
+            <!-- name musi pasowac do js formdata -->
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="Miasto, region..."
+            />
+          </div>
+          <!-- grupa pola -->
+          <div class="form-group">
+            <label for="checkin">Data przyjazdu:</label>
+            <input type="date" id="checkin" name="checkin" />
+          </div>
+          <!-- grupa pola -->
+          <div class="form-group">
+            <label for="checkout">Data wyjazdu:</label>
+            <input type="date" id="checkout" name="checkout" />
+          </div>
+          <!-- grupa pola -->
+          <div class="form-group">
+            <label for="guests">Liczba gości:</label>
+            <input type="number" id="guests" name="guests" min="1" value="1" />
+          </div>
+          <!-- submit odpala event w js -->
+          <button type="submit" class="btn-primary">Szukaj</button>
+        </form>
+      </section>
 
-        <section class="results-section">
-            <h2>Dostępne oferty</h2>
-            <div id="offers-list" class="offers-list">
-                <!-- Offers will be loaded here dynamically -->
-            </div>
-        </section>
+      <!-- sekcja z wynikami -->
+      <section class="results-section">
+        <h2>Dostępne oferty</h2>
+        <!-- tu js wrzuca karty ofert -->
+        <div id="offers-list" class="offers-list">
+          <!-- oferty beda doladowane przez javascript -->
+        </div>
+      </section>
     </main>
 
+    <!-- stopka -->
     <footer>
-        <p>&copy; 2026 Projekt Noclegi</p>
+      <p>&copy; 2026 Projekt Noclegi</p>
     </footer>
 
+    <!-- podpinamy js na koncu zeby html byl juz gotowy -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

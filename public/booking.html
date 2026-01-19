@@ -1,75 +1,106 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- head ma meta i podpiete style -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noclegi - Rezerwacja</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <!-- podpinamy css -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- naglowek strony -->
     <header>
-        <h1>Rezerwacja Noclegów</h1>
-        <nav>
-            <a href="index.html">Wyszukiwarka</a>
-            <a href="booking.html">Rezerwacja</a>
-        </nav>
+      <h1>Rezerwacja Noclegów</h1>
+      <!-- prosta nawigacja -->
+      <nav>
+        <a href="index.html">Wyszukiwarka</a>
+      </nav>
     </header>
 
+    <!-- glowna czesc strony -->
     <main>
-        <section class="booking-section">
-            <h2>Formularz rezerwacji</h2>
-            <form id="booking-form">
-                <div class="form-group">
-                    <label for="offer-id">ID Oferty:</label>
-                    <input type="number" id="offer-id" name="offerId" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="name">Imię i nazwisko:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Telefon:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="checkin-date">Data przyjazdu:</label>
-                    <input type="date" id="checkin-date" name="checkinDate" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="checkout-date">Data wyjazdu:</label>
-                    <input type="date" id="checkout-date" name="checkoutDate" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="guests-count">Liczba gości:</label>
-                    <input type="number" id="guests-count" name="guestsCount" min="1" value="1" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="notes">Dodatkowe uwagi:</label>
-                    <textarea id="notes" name="notes" rows="4"></textarea>
-                </div>
-                
-                <button type="submit" class="btn-primary">Zarezerwuj</button>
-            </form>
-            
-            <div id="booking-result" class="result-message"></div>
-        </section>
+      <!-- sekcja z formularzem rezerwacji -->
+      <section class="booking-section">
+        <h2>Formularz rezerwacji</h2>
+        <!-- id musi pasowac do js -->
+        <form id="booking-form">
+          <!-- pole id oferty -->
+          <div class="form-group">
+            <label for="offer-id">ID Oferty:</label>
+            <!-- name offerid jest pobierane w js -->
+            <input type="number" id="offer-id" name="offerId" required />
+          </div>
+
+          <!-- dane osoby -->
+          <div class="form-group">
+            <label for="name">Imię i nazwisko:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- email -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <!-- telefon -->
+          <div class="form-group">
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+
+          <!-- data przyjazdu -->
+          <div class="form-group">
+            <label for="checkin-date">Data przyjazdu:</label>
+            <input type="date" id="checkin-date" name="checkinDate" required />
+          </div>
+
+          <!-- data wyjazdu -->
+          <div class="form-group">
+            <label for="checkout-date">Data wyjazdu:</label>
+            <input
+              type="date"
+              id="checkout-date"
+              name="checkoutDate"
+              required
+            />
+          </div>
+
+          <!-- liczba gosci -->
+          <div class="form-group">
+            <label for="guests-count">Liczba gości:</label>
+            <input
+              type="number"
+              id="guests-count"
+              name="guestsCount"
+              min="1"
+              value="1"
+              required
+            />
+          </div>
+
+          <!-- dodatkowe uwagi -->
+          <div class="form-group">
+            <label for="notes">Dodatkowe uwagi:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+          </div>
+
+          <!-- submit odpala event w js -->
+          <button type="submit" class="btn-primary">Zarezerwuj</button>
+        </form>
+
+        <!-- tu js wstawia komunikat sukcesu albo bledu -->
+        <div id="booking-result" class="result-message"></div>
+      </section>
     </main>
 
+    <!-- stopka -->
     <footer>
-        <p>&copy; 2026 Projekt Noclegi</p>
+      <p>&copy; 2026 Projekt Noclegi</p>
     </footer>
 
+    <!-- js na koncu -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
